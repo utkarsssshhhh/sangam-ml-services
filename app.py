@@ -1,19 +1,3 @@
-"""
-ml-services API (Feature 1: water quality, Feature 3: flood risk).
-
-Serves two kinds of endpoints for each feature:
-  - /predict   : takes live sensor-style input, returns a prediction
-  - /replay    : returns the "next" row from your historical dataset each
-                 time it's called, so your React dashboard can poll this on
-                 a timer and it'll look like a live feed streaming in.
-
-RUN:
-  pip install flask flask-cors pandas joblib scikit-learn
-  python app.py
-  (starts on http://localhost:5001)
-
-React side: just fetch() these endpoints every few seconds with setInterval.
-"""
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS

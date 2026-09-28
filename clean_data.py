@@ -1,31 +1,3 @@
-"""
-Data cleaning script for the river digital-twin hackathon project (v2).
-
-Drop this file into ml-services/ (same level as app.py) and run it once to
-produce cleaned, merged CSVs ready for training.
-
-CHANGE FROM v1: uses EXACT station-name matching instead of loose keyword
-matching. Loose keywords like "HARIDWAR" or "ROORKEE" were also matching
-unrelated things like groundwater sampling points whose names happened to
-mention those places (e.g. "GROUND WATER AT ... ROORKEE HARIDWAR"), which
-would have contaminated your training data with non-river readings.
-
-WHAT IT DOES:
-1. Loads each raw CSV (water quality: physical/chemical/biological,
-   rainfall), each split across two-plus date ranges.
-2. Cleans up column names.
-3. Parses the date column.
-4. Prints the list of unique station/river names it found.
-5. Filters down to EXACT matches against TARGET_STATIONS (edit below).
-6. Saves cleaned, filtered CSVs into data/cleaned/.
-
-IMPORTANT: TARGET_STATIONS below is pre-filled with the two real Ganga
-stations confirmed in your data (Haridwar + Rishikesh) for the water
-quality files. For rainfall, the station names are place names (e.g.
-"Bahadarabad", "Doiwala"), not river names, so you need to pick which
-ones are actually near Haridwar/Roorkee - see the RAINFALL_STATIONS note
-below.
-"""
 
 import pandas as pd
 from pathlib import Path

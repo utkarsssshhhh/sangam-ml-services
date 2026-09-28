@@ -1,29 +1,3 @@
-"""
-Merge water quality tables + train a water quality model (Feature 1) - v2.
-
-CHANGE FROM v1: v1 built its target as an average of the same columns used
-as model inputs, so the model was trivially "predicting" a number derived
-from itself - that's data leakage, and it's why the R^2 came back at 0.98
-(misleadingly high, not a real result).
-
-v2 reframes the task into something genuinely useful and leakage-free:
-  INPUT  = fast physical sensor readings (pH, turbidity, temperature,
-           conductivity, etc.) - the kind of thing a cheap real-time sensor
-           can measure instantly.
-  TARGET = a composite quality score built from chemical + biological lab
-           parameters (BOD, COD, coliform, heavy metals, etc.) - the kind
-           of thing that normally takes lab time/equipment to get.
-
-Demo story: "Our sensor gives an instant estimate of full water quality
-(including things that normally need a lab) using only fast physical
-readings." That's a real, explainable value proposition, and the
-evaluation numbers are now meaningful because input and target come from
-genuinely different tables.
-
-OUTPUT:
-  data/cleaned/water_quality_merged.csv
-  model/water_quality_model.pkl
-"""
 
 import pandas as pd
 import numpy as np

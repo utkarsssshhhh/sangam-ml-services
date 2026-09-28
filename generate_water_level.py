@@ -1,27 +1,3 @@
-"""
-Synthetic water level generator for the flood-risk feature (Feature 3) - v2.
-
-CHANGE FROM v1: RAIN_SENSITIVITY is now auto-calibrated from the actual
-rainfall data instead of a fixed constant. v1 used a fixed sensitivity that
-worked for one rainfall dataset but produced "all normal, no risk events"
-when re-run against a smaller/different station's rainfall (lower typical
-values -> bumps too small to ever cross the thresholds). Auto-calibrating
-means this keeps working no matter which station's rainfall you feed it.
-
-HOW CALIBRATION WORKS:
-We look at the 90th percentile daily rainfall in your data (a "notably
-heavy rain day", not the single all-time max) and set RAIN_SENSITIVITY so
-that a day like that pushes the water level bump close to the gap between
-baseline and the danger level. That way: typical days stay near baseline
-(normal), moderately heavy rain reaches into warning territory sometimes,
-and only the heaviest rain (and rain stacked over consecutive days, thanks
-to the decay/carry-over) pushes into danger. You can still nudge
-CALIBRATION_TARGET_FRACTION below if the resulting mix still looks off.
-
-OUTPUT:
-  data/cleaned/water_level_synthetic.csv
-  Columns: date, rainfall_mm, water_level_m, risk_label
-"""
 
 import pandas as pd
 import numpy as np
