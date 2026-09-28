@@ -1,0 +1,5 @@
+SlNo,Station,Agency,State LGD Code,State,District LGD Code,District,Tehsil,Block,Village,River,Basin,Tributary,Subtributary,SubSubtributary,Local River,Latitude,Longitude,Data Acquisition Time,Telemetry Hourly Rainfall (mm)
+1,Joshiyara,Uttarakhand,5,Uttarakhand,57,Uttarkashi,-,-,-,-,-,-,-,-,-,30.73122222,78.42733333,02-01-2007 12:00,0.5
+2,Joshiyara,Uttarakhand,5,Uttarakhand,57,Uttarkashi,-,-,-,-,-,-,-,-,-,30.73122222,78.42733333,02-01-2007 16:00,0.5
+3,Kempty,Uttarakhand,5,Uttarakhand,55,Tehri Garhwal,-,-,-,-,-,-,-,-,-,30.49075000,78.04738889,03-01-2007 15:00,6
+4,Kempty,Uttarakhand,5,Uttarakhand,55,Tehri Garhwal,-,-,-,-,-,-,-,-,-,30.49075000,78.04738889,03-01-2007 16:00,0.5
